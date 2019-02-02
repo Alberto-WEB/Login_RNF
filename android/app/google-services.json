@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1010434719583",
+    "firebase_url": "https://pruebas-a4953.firebaseio.com",
+    "project_id": "pruebas-a4953",
+    "storage_bucket": "pruebas-a4953.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010434719583:android:59600c4675f691f7",
+        "android_client_info": {
+          "package_name": "com.sennit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010434719583-5em96bqelt3gb42t92k7ci18fr7a4mlk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs1j9gdprAR5AuVANjx9lL6giNuA7XYu4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
