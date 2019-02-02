@@ -10,7 +10,7 @@ export default (props)=>{
             <Text>Password</Text>
             <TextInput onChangeText={ (text)=> props.setPassword(text) } />
 
-            <Button title="Guardar Usuario" onPress={ ()=> props.createUser() }/>
+            <Button title={props.mainButtonTitle} onPress={ ()=> props.mainAction() }/>
         </View>
     );
 }

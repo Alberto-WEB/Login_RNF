@@ -10,8 +10,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-
-import SignUpScreen from './screens/SignUpScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -25,7 +24,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <SignUpScreen />
+        <LoginScreen />
       </View>
     );
   }
