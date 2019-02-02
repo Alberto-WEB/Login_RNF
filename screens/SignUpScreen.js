@@ -46,6 +46,8 @@ export default class SignUpScreen extends Component{
                    setPassword={this.setPassword} 
                    setEmail={this.setEmail} 
                    mainButtonTitle="Crear Cuenta"
+                   secondaryButtonTitle="Ya tengo cuenta"
+                   navigationAction={()=>{ this.props.navigation.navigate('Login') }}
                    mainAction={this.createUser}/>
           );
     }

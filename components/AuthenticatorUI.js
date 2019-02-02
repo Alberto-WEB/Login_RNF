@@ -11,6 +11,7 @@ export default (props)=>{
             <TextInput onChangeText={ (text)=> props.setPassword(text) } />
 
             <Button title={props.mainButtonTitle} onPress={ ()=> props.mainAction() }/>
+            <Button title={props.secondaryButtonTitle} onPress={ ()=> props.navigationAction() }/>
         </View>
     );
 }
