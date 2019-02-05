@@ -4,10 +4,16 @@ export default StyleSheet .create({
     container:{
         backgroundColor: '#f5f5f5',
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     formControl:{
-        width: '910%',
+        width: '90%',
         marginTop: 20
+    },
+    title:{
+        fontSize: 30,
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 });

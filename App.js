@@ -13,13 +13,23 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import AppNavigator from './Navigator';
 
-import { Provider as PaperProvider } from 'react-native-paper';
+import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+
+const MyTheme = {
+  ...DefaultTheme,
+  roundness: 10,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#1485CC',
+    accent: '#5AEF84'
+  }
+}
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <PaperProvider>
+      <PaperProvider theme={MyTheme}>
         <AppNavigator />
       </PaperProvider>
     );

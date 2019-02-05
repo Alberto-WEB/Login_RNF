@@ -1,13 +1,16 @@
 import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 
-import { TextInput, Button } from 'react-native-paper';
+import { TextInput, Button, Title, withTheme } from 'react-native-paper';
 
 import styles from '../stylesheet/login.stylesheet';
 
-export default (props)=>{
+let AuthenticatorUI = (props)=>{
+    
     return(
         <View style={styles.container}>
+            <Title style={styles.title}>LOGIN</Title>
+            <Title style={{fontFamily: props.theme.fonts.ligth}}>Ingresar a tu cuenta</Title>
             <TextInput 
                 style={styles.formControl}
                 label='Ingresa tu Email'
@@ -22,7 +25,8 @@ export default (props)=>{
 
             <View style={{
                 flexDirection: 'row',
-                justifyContent: 'space-evenly'
+                justifyContent: 'space-evenly',
+                ...styles.formControl
             }}>
                 <TouchableHighlight>
                     <Button onPress={ ()=> props.mainAction() } mode="contained">
@@ -31,7 +35,7 @@ export default (props)=>{
                 </TouchableHighlight>
                     
                 <TouchableHighlight>
-                    <Button onPress={ ()=> props.navigationAction() } mode="contained">>
+                    <Button onPress={ ()=> props.navigationAction() } mode="outlined">
                         {props.secondaryButtonTitle}
                     </Button>
                 </TouchableHighlight>
@@ -39,3 +43,5 @@ export default (props)=>{
         </View>
     );
 }
+
+export default withTheme(AuthenticatorUI); // insertar prop theme
