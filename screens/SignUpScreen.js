@@ -1,37 +1,24 @@
 import React, {Component} from 'react';
 import firebase from 'react-native-firebase';
-
+import { connect } from 'react-redux';
+import { login } from '../actions/user';
 
 import AuthenticatorUI from '../components/AuthenticatorUI';
 
-export default class SignUpScreen extends Component{
+class SignUpScreen extends Component{
 
     constructor(props){
         super(props);
-
-        this.state = {
-            email: '',
-            password: ''
-        }
     }
+    
 
-    setEmail = (email) => {
-        this.setState({
-            email: email
-        })
-    }
 
-    setPassword = (password) => {
-        this.setState({
-            password: password
-        })
-    }
-
-    createUser = async () => {
+    createUser = async (email, password) => {
         try {
-            let response = await firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            let response = await firebase.auth().createUserWithEmailAndPassword(email, password)
 
             let {user} = response;
+            this.props.login(user);
             console.log(user);
         } catch (error) {
             console.log(error);
@@ -52,3 +39,10 @@ export default class SignUpScreen extends Component{
           );
     }
 }
+
+export default connect(
+    (state) => ({ user: state.user }),
+    {
+        login: login
+    }
+)(SignUpScreen);
