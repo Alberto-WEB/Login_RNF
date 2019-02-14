@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import firebase from 'react-native-firebase';
 import { connect } from 'react-redux';
 import { login } from '../actions/user';
+import { Alert, ToastAndroid } from 'react-native';
 
 import AuthenticatorUI from '../components/AuthenticatorUI';
 
@@ -25,11 +26,14 @@ class LoginScreen extends Component{
 
     login = async ({email, password}) => {
         try {
+            
             let response = await firebase.auth().signInWithEmailAndPassword(email, password)
 
             let {user} = response;
             this.props.login(user);
             console.log(user);
+            //Alert.alert('Bienvenido', email);
+            ToastAndroid.show('Bienvenido: ' + email , ToastAndroid.LONG);
         } catch (error) {
             console.log(error);
             

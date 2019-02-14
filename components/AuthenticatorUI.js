@@ -10,7 +10,8 @@ class AuthenticatorUI extends Component{
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            
         }
     }
 
@@ -56,7 +57,10 @@ class AuthenticatorUI extends Component{
                     ...styles.formControl
                 }}>
                     <TouchableHighlight>
-                        <Button onPress={ ()=> props.mainAction({email: this.state.email, password: this.state.password}) } mode="contained">
+                        <Button onPress={ 
+                            
+                            ()=> props.mainAction({email: this.state.email, password: this.state.password}) } mode="contained">
+                            
                             {props.mainButtonTitle}
                         </Button>
                     </TouchableHighlight>

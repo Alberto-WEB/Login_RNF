@@ -6,6 +6,7 @@ import HomeComponent from '../components/HomeComponent';
 import { View, Text } from 'react-native';
 
 import { IconButton } from 'react-native-paper';
+import { DrawerNavigator, DrawerItems } from 'react-navigation';
 
 export default class HomeScreen extends Component{
 
@@ -25,6 +26,7 @@ export default class HomeScreen extends Component{
                        ()=>{
                            firebase.auth().signOut();
                            navigation.navigate('Auth');
+                           
                        }
                    }
                         

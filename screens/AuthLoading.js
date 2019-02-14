@@ -6,13 +6,14 @@ import firebase from 'react-native-firebase';
 
 export default class AuthLoading extends Component{
     componentDidMount(){
-        this.getUser();
+        this.getUser()
     }
     getUser(){
-       firebase.auth().onUserChanged((user)=>{
-               this.props.navigation.navigate(user ? 'App' : 'Auth');
-       })
+        firebase.auth().onUserChanged((user)=>{
+            this.props.navigation.navigate(user ? 'App' : 'Auth');
+    })
     }
+
     render(){
         return(
             <View>
